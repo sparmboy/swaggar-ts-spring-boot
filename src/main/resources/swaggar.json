@@ -1,0 +1,64 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is my example app",
+    "version": "1.0.0-SNAPSHOT",
+    "title": "My Dope App"
+  },
+  "host": "localhost:8080",
+  "basePath": "/api/v1",
+  "tags": [
+    {
+      "name": "my-controller",
+      "description": "My Controller"
+    }
+  ],
+  "paths": {
+    "/greeting": {
+      "post": {
+        "tags": [
+          "greeting-controller"
+        ],
+        "summary": "Accepts a request to return a greeting",
+        "operationId": "generateDocument",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "greetingRequest",
+            "description": "Contains details of the greeting request",
+            "required": true,
+            "schema": {
+              "$ref": "./schema/requests/greetingRequest.schema.json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "./schema/responses/greetingResponse.schema.json"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "./schema/responses/errorResponse.schema.json"
+            }
+          },
+          "500": {
+            "description": "Internal Error",
+            "schema": {
+              "$ref": "./schema/responses/errorResponse.schema.json"
+            }
+          }
+        }
+      }
+    }
+  }
+}
