@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://stockmarketlottery.com/dto/enums/sectorEnum.schema.json",
+  "title": "Sector",
+  "description": "The list of different sectors for a trade",
+  "type": "string",
+  "enum": [
+    "Energy","Tech"
+  ]
+}

@@ -1,26 +1,26 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "This is my example app",
+    "description": "This is API definition for the stock market lottery app",
     "version": "1.0.0-SNAPSHOT",
-    "title": "My Dope App"
+    "title": "Stock Market Lottery"
   },
   "host": "localhost:8080",
   "basePath": "/api/v1",
   "tags": [
     {
-      "name": "my-controller",
-      "description": "My Controller"
+      "name": "order-controller",
+      "description": "Order Controller"
     }
   ],
   "paths": {
-    "/greeting": {
+    "/orders": {
       "post": {
         "tags": [
-          "greeting-controller"
+          "order-controller"
         ],
-        "summary": "Accepts a request to return a greeting",
-        "operationId": "generateDocument",
+        "summary": "Handles all requests for managing orders",
+        "operationId": "placeOrder",
         "consumes": [
           "application/json"
         ],
@@ -30,11 +30,11 @@
         "parameters": [
           {
             "in": "body",
-            "name": "greetingRequest",
-            "description": "Contains details of the greeting request",
+            "name": "placeOrderRequest",
+            "description": "Contains details of a new order to place",
             "required": true,
             "schema": {
-              "$ref": "./schema/requests/greetingRequest.schema.json"
+              "$ref": "./schema/requests/placeOrderRequest.schema.json"
             }
           }
         ],
@@ -42,7 +42,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "./schema/responses/greetingResponse.schema.json"
+              "$ref": "./schema/responses/placeOrderResponse.schema.json"
             }
           },
           "400": {

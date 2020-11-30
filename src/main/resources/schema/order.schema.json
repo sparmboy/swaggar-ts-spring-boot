@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://stockmarketlottery.com/dto/responses/order.schema.json",
+  "title": "Order",
+  "description": "Contains details of an order placed",
+  "type": "object",
+  "required": [
+    "amount",
+    "currency",
+    "profitPercentage",
+    "lossPercentage"
+  ],
+  "properties": {
+    "amount": {
+      "type": "string",
+      "title": "Amount",
+      "description": "The amount to be placed in minor units (e.g. pence for GBP)"
+    },
+    "currency": {
+      "$ref": "./enums/currencyEnum.schema.json"
+    },
+    "profitPercentage": {
+      "type": "number",
+      "title": "Profit Percentage",
+      "description": "Profit percentage at which to make a sale"
+    },
+    "lossPercentage": {
+      "type": "number",
+      "title": "Loss Percentage",
+      "description": "Loss percentage at which to make a sale"
+    },
+    "preferredSectors": {
+      "type": "array",
+      "title": "Preferred Sectors",
+      "description": "List of preferred sectors to select trades in",
+      "items": {
+        "$ref": "./enums/sectorEnum.schema.json"
+      }
+    }
+  }
+}
