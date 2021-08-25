@@ -1,4 +1,4 @@
-# swaggar-ts-sprint-boot
+# swagger-ts-spring-boot
 A swaggar blue print that produces typescript DTOs and client library together with Java DTOs and a Spring boot server from a single swaggar definition
 
 # Usage
